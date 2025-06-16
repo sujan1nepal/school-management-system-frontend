@@ -1,5 +1,5 @@
 // Replace with your backend deployment URL
-const backendURL = 'https://your-backend-url.onrender.com';
+const backendURL = 'https://school-management-system-0zd9.onrender.com';
 
 const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
