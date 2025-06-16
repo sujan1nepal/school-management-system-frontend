@@ -1,4 +1,38 @@
-<!-- Teacher dashboard -->
-<h1>Teacher Dashboard</h1>
-<a href="dashboard_parent.html">Go to Parent Dashboard</a>
-<!-- Add teacher features like attendance, test entry, notes upload -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Dashboard</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Teacher Dashboard</h2>
+    <div id="profile"></div>
+    <button onclick="logout()">Logout</button>
+    <div id="message"></div>
+  </div>
+  <script>
+    // Replace with your backend deployment URL
+    const backendURL = 'https://school-management-system-0zd9.onrender.com';
+    async function fetchProfile() {
+      const res = await fetch(backendURL + '/api/profile', { credentials: 'include' });
+      const data = await res.json();
+      if (res.ok) {
+        document.getElementById('profile').innerHTML = `
+          <b>Name:</b> ${data.name}<br>
+          <b>Email:</b> ${data.email}<br>
+          <b>Role:</b> ${data.role}
+        `;
+      } else {
+        window.location.href = "index.html";
+      }
+    }
+    function logout() {
+      fetch(backendURL + '/api/auth/logout', { method: 'POST', credentials: 'include' })
+        .then(() => window.location.href = "index.html");
+    }
+    fetchProfile();
+  </script>
+</body>
+</html>
