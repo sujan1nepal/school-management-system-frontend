@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; background: #f3f3f3; }
+.container { max-width: 350px; margin: 4em auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 4px 18px #ccc; }
+input, button, select { width: 100%; margin: 0.5em 0; padding: 0.8em; border: 1px solid #ccc; border-radius: 5px; }
+button { background: #0b79d0; color: #fff; border: none; }
+#message { color: #e74c3c; text-align: center; margin-top: 1em; }
